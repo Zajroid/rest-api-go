@@ -1,0 +1,51 @@
+# todo
+
+POST http://localhost:1235/users
+Content-Type: application/json
+
+{}
+
+> {%
+client.test('Req', function () {
+    client.assert(response.status === 200, "Response status is 200")
+});
+%}
+
+###
+
+PUT http://localhost:1235/user/1
+Content-Type: application/json
+
+{}
+
+> {%
+client.test('Req', function () {
+    client.assert(response.status === 204, "Response status is 204")
+});
+%}
+
+###
+
+PATCH http://localhost:1235/user/1
+Content-Type: application/json
+
+{}
+
+> {%
+client.test('Req', function () {
+    client.assert(response.status === 204, "Response status is 204")
+});
+
+%}
+###
+
+DELETE http://localhost:1235/user/1
+Content-Type: application/json
+
+{}
+
+> {%
+client.test('Req', function () {
+    client.assert(response.status === 204, "Response status is 204")
+});
+%}
